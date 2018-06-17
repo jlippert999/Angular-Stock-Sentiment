@@ -1,0 +1,33 @@
+<div *ngIf="!isDataAvailable">
+    <div class="outer">
+        <div class="loader"></div>
+    </div>
+</div>
+<!-- 
+<h3>
+    Historical Data for {{ticker}}
+    <small class="text-muted">last 30 days</small>
+</h3>
+<nvd3 #nvd3 [options]='options' [data]='data'></nvd3> 
+-->
+<nvd3 #nvd3 [options]='options' [data]='data'></nvd3>
+
+<!-- <div class="card mb-3 fuzzy-border">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Company Name: ({{ticker}}) 111.22 <span style='color:green'>+.05</span>
+    </div>
+    <div class="card-header center">
+        <button type="button" class="btn btn-outline-primary">5 day</button>
+        <button type="button" class="btn btn-outline-primary">10 day</button>
+        <button type="button" class="btn btn-outline-primary">1 month</button>
+        <button type="button" class="btn btn-outline-primary">3 month</button>
+        <button type="button" class="btn btn-outline-primary">6 months</button>
+        <button type="button" class="btn btn-outline-primary">max</button>
+    </div>
+        
+    <div class="card-body ">
+        <nvd3 #nvd3 [options]='options' [data]='data'></nvd3>
+    </div>
+    <div class="card-footer small text-muted">last 30 days</div>
+</div>
+         -->

@@ -1,0 +1,17 @@
+<ul class="list-group" style="font-size: small;">
+    <li class="list-group-item" *ngFor="let x of news">
+        <div class="thumbnail link-container">
+            <a class="btn-floating btn-action" target="_blank" href="{{x.url}}" style="text-decoration: none;">
+                <div id="news-content">
+                    <i class="fa fa-chevron-right"> {{x.provider_name}} </i>
+                    <div class="caption" ng-hide="!x.thumbnail==null">
+                        <p>{{x.title}}<img src="{{x.thumbnail}}" class="img-fluid" alt="" style="padding-top:2px"></p>
+                    </div>                    
+                    <div class="newsdate">
+                        {{x.provider_publish_time}}
+                    </div>
+                </div>                
+            </a>            
+        </div>
+    </li>
+</ul>

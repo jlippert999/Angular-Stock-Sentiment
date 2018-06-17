@@ -1,0 +1,144 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-12" style="display: block;">
+                <div class="card mb-3 fuzzy-border">
+                    <div class="card-header">
+                        <i class="fa fa-bar-chart"></i> Company Name: ({{ticker}}) 111.22 <span style='color:green'>+.05</span>
+                    </div>
+                    <div class="card-header center">
+                        <div *ngFor="let b of buttonList" [class.active]="clicked === n" class="btn-group" data-toggle="buttons">
+                            <button type="button" class="btn btn-outline-primary" (click)="chartFilter(b)">{{b}}</button>
+                        </div>
+                    </div>
+                        
+                    <div class="card-body ">
+                        <stock-historical #chartHistorical></stock-historical>
+                    </div>
+                    <div class="card-footer small text-muted">last 30 days</div>
+                </div>
+            </div>
+        </div>  
+        <div class="row">   
+            <div class="col-md-12" style="display: block">
+                <div class="card mb-3 fuzzy-border">
+                    <div class="card-header">
+                        <i class="fa fa-twitter"></i> 
+                        Sentitment Data for {{ticker}}
+                        <span><small class="text-muted">(stock close % change versus sentiment % change)</small></span>
+                    </div>
+                    <div class="card-body ">
+                        <stock-sentiment #chartSentiment></stock-sentiment>  
+                    </div>
+                    <div class="card-footer small text-muted">last 30 days</div>
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="display: block">
+                <stock-sentiment-v1 #chartSentimentV1></stock-sentiment-v1>                    
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="well pre-scrollable fuzzy-border" style="max-height: 1500px">
+            <stock-news></stock-news>
+        </div>
+    </div>
+</div> 
+
+
+
+<!--<div class="row">
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12" style="height:350px; width:1000px; display: block">
+                <div>Historical</div>
+                <sentiment-chart #chartHistorical></sentiment-chart>
+            </div>
+            <div class="col-md-12" style="height:350px; width:1000px; display: block; padding-top: 200px">
+                <div>Sentiment Score</div>
+                <sentiment-chart #chartSentimentScore></sentiment-chart>
+            </div>
+            <div class="col-md-12" style="height:350px; width:1000px; display: block; padding-top: 200px">
+                <div>Sentiment Weighted</div>
+                <sentiment-chart #chartSentimentWeighted></sentiment-chart>
+            </div>
+            <div class="col-md-12" style="height:350px; width:1000px; display: block; padding-top: 200px">
+                <div>Sentiment Average</div>
+                <sentiment-chart #chartSentimentAverage></sentiment-chart>
+            </div>
+            <div class="col-md-12">
+                <div *ngIf="!isDataAvailable" style="width:600px;height:500px">
+                    <div class="outer">
+                        <div *ngIf="!isDataAvailable" class="loader"></div>
+                    </div>
+                </div>
+                <div class="chart-container" style="display: block" *ngIf="isDataAvailable">
+                    <canvas baseChart width="600" height="250"
+                            [datasets]="chartData"
+                            [labels]="chartLabels"
+                            [options]="chartOptions"
+                            [colors]="chartColors"
+                            [legend]="chartLegend"
+                            [chartType]="chartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <ngx-datatable class="material colored-header sm table table-striped table-hover"
+                               [loadingIndicator]="loadingIndicator"
+                               [rows]="rows"
+                               [rowHeight]="35"
+                               [headerHeight]="35"
+                               [footerHeight]="35"
+                               [columns]="columns"
+                               [scrollbarV]="true"
+                               [columnMode]="'force'">
+                </ngx-datatable>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <ticker-news></ticker-news>
+    </div>    
+</div>
+
+
+<br />
+<hr />
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span10">
+            <div style="height:350px;">
+                <div>1</div>
+            </div>
+            <div style="height:350px;">
+                <div>Sentiment Score</div>
+            </div>
+            <div style="height:350px;">
+                <div>Sentiment 2</div>
+            </div>
+            <div style="height:350px;">
+                <div>Sentiment 3</div>
+            </div>
+            <div style="height:350px;">
+                <div>Sentiment 4</div>
+            </div>
+        </div>
+        <div class="span2">
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+            <div>News</div>
+        </div>
+    </div>
+</div>
+
+<br />
+<hr/>-->

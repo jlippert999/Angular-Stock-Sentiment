@@ -1,0 +1,26 @@
+<div>
+    <input type='text'
+         style='padding:8px;margin:15px auto;width:30%;'
+         placeholder='Type to filter...'
+         (keyup)='updateFilter($event)' />
+    
+    <ngx-datatable 
+        #datatable
+        *ngIf="renderTable"         
+        class="material sm table table-striped table-hover table-bordered"
+        [loadingIndicator]="loadingIndicator"
+        [headerHeight]="50"
+        [limit]="25"         
+        columnMode="force"
+        [footerHeight]="50"
+        [rows]="rows"     
+        [rowHeight]="35"         
+        [headerHeight]="35"
+        [footerHeight]="35"
+        [columns]="columns"         
+        [selected]="selected"
+        [selectionType]="'single'"
+        (select)="onSelect($event)"
+        [scrollbarV]="true">
+    </ngx-datatable>
+</div>
